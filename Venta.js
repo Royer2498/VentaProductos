@@ -1,4 +1,3 @@
-import Producto from './Producto.js';
 
 class Venta{
 
@@ -16,3 +15,4 @@ class Venta{
 }
 
 module.exports = Venta;
+

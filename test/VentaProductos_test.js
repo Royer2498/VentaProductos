@@ -4,6 +4,8 @@ var should = require('chai').should();
 
 import Producto from '../Producto.js';
 import Venta from '../Venta.js';
+import Servicio from '../Servicio.js';
+import Articulo from '../Articulo';
 
 describe('VentaProductosTest',function () {
 
@@ -27,6 +29,24 @@ describe('VentaProductosTest',function () {
         venta.vender(cepillo);
         expect(venta.obtenerGanancia()).equal(70);
     });
+
+    it('Si vendo un servicio la ganancia deber ser el costo de la misma ',function () {
+        let limpieza = new Servicio("limpieza",150);
+        let venta = new Venta(0);
+        venta.vender(limpieza);
+        expect(venta.obtenerGanancia()).equal(150);
+    });
+
+    it('Si vendo un articulo la ganancia deber ser el costo del mismo ',function () {
+        let lavandina = new Articulo("lavandina",80);
+        let venta = new Venta(0);
+        venta.vender(lavandina);
+        expect(venta.obtenerGanancia()).equal(80);
+    });
+
+
+
+
 
 
 });

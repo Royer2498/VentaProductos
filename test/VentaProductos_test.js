@@ -14,22 +14,6 @@ describe('VentaProductosTest',function () {
         expect(venta.obtenerGanancia()).equal(0);
     });
 
-    it('Si vendo un producto que cuesta 50 la ganancia deberia ser 50',function () {
-        let carne = new Producto("carne",50);
-        let venta = new Venta(0);
-        venta.vender(carne);
-        expect(venta.obtenerGanancia()).equal(50);
-    });
-
-    it('Si vendo dos productos la ganancia deberia ser la suma de sus valores',function () {
-        let carne = new Producto("carne",50);
-        let cepillo = new Producto("cepillo",20);
-        let venta = new Venta(0);
-        venta.vender(carne);
-        venta.vender(cepillo);
-        expect(venta.obtenerGanancia()).equal(70);
-    });
-
     it('Si vendo un servicio la ganancia deber ser el costo de la misma ',function () {
         let limpieza = new Servicio("limpieza",150);
         let venta = new Venta(0);
@@ -43,6 +27,21 @@ describe('VentaProductosTest',function () {
         venta.vender(lavandina);
         expect(venta.obtenerGanancia()).equal(80);
     });
+
+    it('Si vendo un articulo y un servicio la ganancia deberia ser la suma de los dos costos ',function () {
+        let lavandina = new Articulo("lavandina",80);
+        let limpieza = new Servicio("limpieza",150);
+        let venta = new Venta(0);
+        venta.vender(limpieza);
+        venta.vender(lavandina);
+        expect(venta.obtenerGanancia()).equal(230);
+    });
+
+    it('Si calculo la tarifa de un servicio deberia retornarme el 20% de su costo',function () {
+       let reparacion = new Servicio("reparacion",500);
+       expect(reparacion.calcularTarifa()).equal((reparacion.getPrecio() * 20)/100);
+    });
+
 
 
 

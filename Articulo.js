@@ -1,14 +1,6 @@
-class Articulo{
+import Producto from './Producto.js';
 
-    constructor(nombre,precio){
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-
-    getPrecio(){
-        return this.precio;
-    }
+class Articulo extends Producto{
 
 }
-
 module.exports = Articulo;

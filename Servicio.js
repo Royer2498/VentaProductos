@@ -1,14 +1,10 @@
-class Servicio{
+import Producto from './Producto.js';
 
-    constructor(nombre,precio){
-        this.nombre = nombre;
-        this.precio = precio;
+class Servicio extends Producto{
+
+    calcularTarifa() {
+        return ((super.getPrecio() * 20) / 100);
     }
-
-    getPrecio(){
-        return this.precio;
-    }
-
 }
 
 module.exports = Servicio;

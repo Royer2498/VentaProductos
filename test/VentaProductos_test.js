@@ -42,6 +42,11 @@ describe('VentaProductosTest',function () {
        expect(reparacion.calcularTarifa()).equal((reparacion.getPrecio() * 20)/100);
     });
 
+    it('Si calculo la tarifa de un articulo deberia retornarme el 35% de su costo',function () {
+        let esponja = new Articulo("esponja",500);
+        expect(esponja.calcularTarifa()).equal((esponja.getPrecio() * 35)/100);
+    });
+
 
 
 

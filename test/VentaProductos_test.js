@@ -19,5 +19,14 @@ describe('VentaProductosTest',function () {
         expect(venta.obtenerGanancia()).equal(50);
     });
 
+    it('Si vendo dos productos la ganancia deberia ser la suma de sus valores',function () {
+        let carne = new Producto("carne",50);
+        let cepillo = new Producto("cepillo",20);
+        let venta = new Venta(0);
+        venta.vender(carne);
+        venta.vender(cepillo);
+        expect(venta.obtenerGanancia()).equal(70);
+    });
+
 
 });

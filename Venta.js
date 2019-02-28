@@ -11,7 +11,7 @@ class Venta{
     }
 
     vender(producto){
-        this.ganancia = producto.getPrecio();
+        this.ganancia += producto.getPrecio();
     }
 }
 

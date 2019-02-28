@@ -1,10 +1,17 @@
+import Producto from './Producto.js';
+
 class Venta{
 
-    constructor(){
+    constructor(ganancia){
+        this.ganancia = ganancia;
     }
 
     obtenerGanancia(){
-        return 0;
+        return this.ganancia;
+    }
+
+    vender(producto){
+        this.ganancia = producto.getPrecio();
     }
 }
 
